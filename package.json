@@ -1,0 +1,29 @@
+{
+  "name": "pb_lucas_barrozo",
+  "version": "1.0.0",
+  "description": "todo list project for university project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucaslb767/todoListApp.git"
+  },
+  "author": "lucas barrozo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucaslb767/todoListApp/issues"
+  },
+  "homepage": "https://github.com/lucaslb767/todoListApp#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
