@@ -23,14 +23,14 @@ mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
 //config do view engine
 app.set("view engine", "ejs")
 
-//get
+//get read
 app.get("/", (req, res) => {
     TodoTask.find({}, (err, tasks) => {
         res.render("todo.ejs", { todoTasks: tasks });
     });
 });
 
-//post
+//post create
 app.post('/', async(req, res) => {
     const todoTask = new TodoTask({
         content: req.body.content
@@ -59,3 +59,12 @@ app
             res.redirect("/");
         });
     });
+
+//delete
+app.route("/remove/:id").get((req, res) => {
+    const id = req.params.id;
+    TodoTask.findByIdAndRemove(id, err => {
+        if (err) return res.send(500, err);
+        res.redirect("/");
+    });
+});
