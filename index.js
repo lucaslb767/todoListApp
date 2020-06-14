@@ -24,9 +24,11 @@ mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
 app.set("view engine", "ejs")
 
 //get
-app.get('/', (req, res) => {
-    res.render('todo.ejs')
-})
+app.get("/", (req, res) => {
+    TodoTask.find({}, (err, tasks) => {
+        res.render("todo.ejs", { todoTasks: tasks });
+    });
+});
 
 //post
 app.post('/', async(req, res) => {
